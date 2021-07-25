@@ -1,17 +1,9 @@
-function calcularMediaAritmetica(lista) {
-    /* let sumaLista = 0;
-    for (let i = 0; i < lista.length; i++) {
-        sumaLista = sumaLista + lista[i];
-    } */
-    const sumaLista = lista.reduce(
-        function (valorAcumulado = 0, nuevoElemento) {
-            return valorAcumulado + nuevoElemento;
-        }
-    );
+function calcularMediaAritmetica(numbers) {
+    const reducer = (accumulator, currentValue = 0) => accumulator + currentValue;
+    const addTheNumbers = numbers.reduce(reducer);
+    const averageNumber = addTheNumbers / numbers.length;
 
-    const promedioLista = sumaLista / lista.length;
-
-    return promedioLista;
+    return averageNumber;
 }
 
-console.log(calcularMediaAritmetica([1, 14, 151, 197]))
+console.log(calcularMediaAritmetica([20, 20, 40, 40]))
